@@ -1,1 +1,33 @@
+<<<<<<< HEAD
 	
+=======
+@{
+var txt = DateTime.Now;
+double res = 0;
+double[] x;
+
+if (IsPost)
+{
+string line = Request.Form["Values"];
+string[] values=line.Split(new Char[] { ',', ' '});
+x = new double[values.Length];
+for (int i = 0; i < values.Length; i++)
+{
+x[i] = Convert.ToDouble(values[i]);
+res += x[i];
+}
+res /= x.Length;
+}
+}
+
+<html>
+<body>
+<h2>Expected value</h2><br />
+<form method="post">
+<input type="text" name="Values" value=""/>
+<input type="submit" value="Submit" class="submit" />
+</form>
+<p>@res</p>
+</body>
+</html>
+
